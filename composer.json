@@ -1,0 +1,28 @@
+{
+    "name": "eymengunay/airbrake-bundle",
+    "type": "symfony-bundle",
+    "description": "Airbrake.io integration for Symfony2",
+    "keywords": ["airbrake", "exception", "errbit"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eymen Gunay",
+            "email": "eymen@egunay.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": ">=2.1,<2.3-dev",
+        "airbrake/airbrake-php": "dev-master"
+    },
+    "target-dir": "Eo/AirbrakeBundle",
+    "autoload": {
+        "psr-0": {
+            "Eo\\AirbrakeBundle": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
