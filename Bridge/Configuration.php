@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eo\AirbrakeBundle\Airbrake;
+namespace Eo\AirbrakeBundle\Bridge;
 
 use Airbrake\Configuration as BaseConfiguration;
 
@@ -23,7 +23,8 @@ class Configuration extends BaseConfiguration
     public function __construct($container)
     {
         parent::__construct($container->getParameter('eo_airbrake.api_key'), array(
-            'async' => $container->getParameter('eo_airbrake.async')
+            'async'           => $container->getParameter('eo_airbrake.async'),
+            'environmentName' => $container->get('kernel')->getEnvironment()
         ));
     }
 }

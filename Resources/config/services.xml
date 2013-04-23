@@ -5,8 +5,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="eo_airbrake.configuration.class">Eo\AirbrakeBundle\Airbrake\Configuration</parameter>
-        <parameter key="eo_airbrake.client.class">Eo\AirbrakeBundle\Airbrake\Client</parameter>
+        <parameter key="eo_airbrake.configuration.class">Eo\AirbrakeBundle\Bridge\Configuration</parameter>
+        <parameter key="eo_airbrake.client.class">Eo\AirbrakeBundle\Bridge\Client</parameter>
         <parameter key="eo_airbrake.exception_listener.class">Eo\AirbrakeBundle\EventListener\ExceptionListener</parameter>
         <parameter key="eo_airbrake.shutdown_listener.class">Eo\AirbrakeBundle\EventListener\ShutdownListener</parameter>
     </parameters>

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eo\AirbrakeBundle\Airbrake;
+namespace Eo\AirbrakeBundle\Bridge;
 
 use Airbrake\Client as BaseClient;
 
@@ -18,7 +18,7 @@ class Client extends BaseClient
     /**
      * Class constructor
      * 
-     * @param Eo\AirbrakeBundle\Airbrake\Configuration $configuration
+     * @param Eo\AirbrakeBundle\Bridge\Configuration $configuration
      */
     public function __construct(Configuration $configuration)
     {

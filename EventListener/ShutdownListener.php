@@ -11,7 +11,7 @@
 
 namespace Eo\AirbrakeBundle\EventListener;
 
-use Eo\AirbrakeBundle\Airbrake\Client;
+use Eo\AirbrakeBundle\Bridge\Client;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
 /**
