@@ -11,6 +11,7 @@
 
 namespace Eo\AirbrakeBundle\Controller;
 
+use Eo\AirbrakeBundle\Exception\SimulateException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SimulateController extends Controller
@@ -20,6 +21,6 @@ class SimulateController extends Controller
      */
     public function indexAction()
     {
-        throw new \ErrorException("I've made a huge mistake");
+        throw new SimulateException("I've made a huge mistake");
     }
 }
