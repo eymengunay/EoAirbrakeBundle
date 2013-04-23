@@ -1,25 +1,34 @@
 <?php
 
+/*
+ * This file is part of the EoAirbrakeBundle package.
+ *
+ * (c) Eymen Gunay <eymen@egunay.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Eo\AirbrakeBundle\EventListener;
 
-use Nodrew\Bundle\PhpAirbrakeBundle\Airbrake\Client,
-    Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent,
-    Symfony\Component\HttpKernel\Exception\HttpException;
+use Eo\AirbrakeBundle\Airbrake\Client;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 
 /**
- * The PhpAirbrakeBundle ExceptionListener.
- *
- * Handles exceptions that occur in the code base.
- *
- * @package		Airbrake
- * @author		Drew Butler <hi@nodrew.com>
- * @copyright	(c) 2011 Drew Butler
- * @license		http://www.opensource.org/licenses/mit-license.php
+ * Eo\AirbrakeBundle\EventListener\ExceptionListener
  */
 class ExceptionListener
 {
+    /**
+     * @var Airbrake\Client
+     */
     protected $client;
 
+    /**
+     * Class constructor
+     * @param Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;

@@ -1,8 +1,17 @@
 <?php
 
+/*
+ * This file is part of the EoAirbrakeBundle package.
+ *
+ * (c) Eymen Gunay <eymen@egunay.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Eo\AirbrakeBundle\EventListener;
 
-use Nodrew\Bundle\PhpAirbrakeBundle\Airbrake\Client;
+use Eo\AirbrakeBundle\Airbrake\Client;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
 /**
@@ -15,13 +24,17 @@ class ShutdownListener
      */
     protected $client;
 
+    /**
+     * Class constructor
+     * @param Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
     
     /**
-     * Register the handler on the request.
+     * Register a function for execution on shutdown
      *
      * @param Symfony\Component\HttpKernel\Event\FilterControllerEvent $event
      */
