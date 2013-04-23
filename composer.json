@@ -1,5 +1,5 @@
 {
-    "name": "eymengunay/airbrake-bundle",
+    "name": "eo/airbrake-bundle",
     "type": "symfony-bundle",
     "description": "Airbrake.io integration for Symfony2",
     "keywords": ["airbrake", "exception", "errbit"],
