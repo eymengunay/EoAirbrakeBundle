@@ -13,8 +13,8 @@ class Configuration extends BaseConfiguration
      */
     public function __construct($container)
     {
-        parent::__construct($container->getParameter('api_key'), array(
-            'async' => $container->getParameter('async')
+        parent::__construct($container->getParameter('eo_airbrake.api_key'), array(
+            'async' => $container->getParameter('eo_airbrake.async')
         ));
     }
 }
