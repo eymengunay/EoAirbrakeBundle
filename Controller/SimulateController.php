@@ -9,7 +9,7 @@ class SimulateController extends Controller
     /**
      * Index action
      */
-    public function indexAction($name)
+    public function indexAction()
     {
         throw new \ErrorException("I've made a huge mistake");
     }
