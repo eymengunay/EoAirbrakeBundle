@@ -64,7 +64,11 @@ You will now be able to access the example controller from: `http://domain.tld/a
 ```
 eo_airbrake:
     api_key: YOUR-API-KEY
-    async: true # Send an asyncronous notification using a socket connection.
+    # By default, the notifier uses a socket connection to send the exceptions to Airbrake, 
+    # which WON'T wait for a response back from the server. 
+    # If this is not derisable for your application, you can pass async: false 
+    # and the notifier will send an syncronous notification using cURL.
+    async: true
 ```
 
 ## Usage
