@@ -1,5 +1,7 @@
 # EoAirbrakeBundle
 
+[![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/9621503)](http://depending.in/eymengunay/EoAirbrakeBundle)
+
 [Airbrake.io](https://airbrake.io) integration for Symfony2.
 
 ## Prerequisites
