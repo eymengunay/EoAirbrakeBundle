@@ -38,6 +38,7 @@ class EoAirbrakeExtension extends Extension
 
         $container->setParameter('eo_airbrake.api_key', $config['api_key']);
         $container->setParameter('eo_airbrake.async', $config['async']);
+        $container->setParameter('eo_airbrake.host', $config['host']);
 
         // Exception Listener
         if ($config['api_key'] && $config['api_key'] != '') {

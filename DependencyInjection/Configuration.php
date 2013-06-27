@@ -33,6 +33,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('api_key')->defaultValue('')->end()
                 ->booleanNode('async')->defaultTrue()->end()
+                ->scalarNode('host')->defaultValue('api.airbrake.io')->end()
             ->end()
         ;
 

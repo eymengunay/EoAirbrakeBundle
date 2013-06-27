@@ -4,6 +4,8 @@
 
 [Airbrake.io](https://airbrake.io) integration for Symfony2.
 
+(Supports also [Errbit](https://github.com/errbit/errbit))
+
 ## Prerequisites
 This version of the bundle requires Symfony 2.1+
 

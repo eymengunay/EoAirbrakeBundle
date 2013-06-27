@@ -24,7 +24,8 @@ class Configuration extends BaseConfiguration
     {
         parent::__construct($container->getParameter('eo_airbrake.api_key'), array(
             'async'           => $container->getParameter('eo_airbrake.async'),
-            'environmentName' => $container->get('kernel')->getEnvironment()
+            'environmentName' => $container->get('kernel')->getEnvironment(),
+            'host'            => $container->getParameter('eo_airbrake.host')
         ));
     }
 }
