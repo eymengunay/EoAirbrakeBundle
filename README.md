@@ -13,6 +13,7 @@ This version of the bundle requires Symfony 2.1+
 
 ### Step 1: Download EoAirbrakeBundle using composer
 Add EoAirbrakeBundle in your composer.json:
+
 ```
 {
     "require": {
@@ -22,13 +23,16 @@ Add EoAirbrakeBundle in your composer.json:
 ```
 
 Now tell composer to download the bundle by running the command:
+
 ```
 $ php composer.phar update eo/airbrake-bundle
 ```
+
 Composer will install the bundle to your project's vendor/eo directory.
 
 ### Step 2: Enable the bundle
 Enable the bundle in the kernel:
+
 ```
 <?php
 // app/AppKernel.php
@@ -46,15 +50,16 @@ public function registerBundles()
 Now that you have properly installed and enabled EoAirbrakeBundle, the next step is to configure the bundle to work with the specific needs of your application.
 
 Add the following configuration to your `config.yml` file
+
 ```
 # app/config/config.yml
 eo_airbrake:
     api_key: YOUR-API-KEY
 ```
-All configuration values are required to use the bundle.
 
 ### Step 4 (Optional): Add EoAirbrakeBundle routing to simulate an error exception:
 If you want to simulate an exception and test your configuration you can add the following route in your application.
+
 ```
 # app/config/routing.yml
 eo_airbrake_simulate:
@@ -65,14 +70,25 @@ You will now be able to access the example controller from: `http://domain.tld/a
 
 
 ## Configuration reference
+
 ```
 eo_airbrake:
+    # Omit this key if you need to enable/disable the bundle temporarily 
+    # If not given, this bundle will ignore all exceptions and won't send any data to remote.
     api_key: YOUR-API-KEY
     # By default, the notifier uses a socket connection to send the exceptions to Airbrake, 
     # which WON'T wait for a response back from the server. 
     # If this is not derisable for your application, you can pass async: false 
     # and the notifier will send an syncronous notification using cURL.
     async: true
+    # If you are using your own hosted implementation of 
+    # Airbrake (such as Errbit) you will have to specify your custom host name.
+    host: errbit.example.com
+    # You might want to ignore some exceptions such as http not found, access denied etc.
+    # By default this bundle ignores all HttpException instances. (includes HttpNotFoundException, AccessDeniedException)
+    # To log all exceptions leave this array empty.
+    ignored_exceptions: ["Symfony\Component\HttpKernel\Exception\HttpException"]
+
 ```
 
 ## Usage
