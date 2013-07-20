@@ -41,7 +41,7 @@ class EoAirbrakeExtension extends Extension
         $container->setParameter('eo_airbrake.host', $config['host']);
 
         // Exception Listener
-        if ($config['api_key'] && $config['api_key'] != '') {
+        if ($config['api_key']) {
             // Airbreak Configuration
             $class = $container->getParameter('eo_airbrake.configuration.class');
             $definition = new Definition($class, array(new Reference('service_container')));
@@ -54,7 +54,7 @@ class EoAirbrakeExtension extends Extension
 
             // Exception Listener
             $class = $container->getParameter('eo_airbrake.exception_listener.class');
-            $definition = new Definition($class, array(new Reference('eo_airbrake.client')));
+            $definition = new Definition($class, array(new Reference('eo_airbrake.client'), $config['ignored_exceptions']));
             $definition->addTag('kernel.event_listener', array('event' => 'kernel.exception', 'method' => 'onKernelException'));
             $container->setDefinition('php_airbrake.exception_listener', $definition);
 
