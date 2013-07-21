@@ -1,6 +1,7 @@
 # EoAirbrakeBundle
 
-[![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/9621503)](http://depending.in/eymengunay/EoAirbrakeBundle)
+[![Latest Stable Version](https://poser.pugx.org/eo/airbrake-bundle/v/stable.png)](https://packagist.org/packages/eo/airbrake-bundle)
+[![Dependencies Status](https://www.versioneye.com/php/eo:airbrake-bundle/dev-master/badge.png)](http://depending.in/eymengunay/EoAirbrakeBundle)
 
 [Airbrake.io](https://airbrake.io) integration for Symfony2.
 
@@ -76,14 +77,17 @@ eo_airbrake:
     # Omit this key if you need to enable/disable the bundle temporarily 
     # If not given, this bundle will ignore all exceptions and won't send any data to remote.
     api_key: YOUR-API-KEY
+
     # By default, the notifier uses a socket connection to send the exceptions to Airbrake, 
     # which WON'T wait for a response back from the server. 
     # If this is not derisable for your application, you can pass async: false 
     # and the notifier will send an syncronous notification using cURL.
     async: true
+
     # If you are using your own hosted implementation of 
     # Airbrake (such as Errbit) you will have to specify your custom host name.
     host: errbit.example.com
+
     # You might want to ignore some exceptions such as http not found, access denied etc.
     # By default this bundle ignores all HttpException instances. (includes HttpNotFoundException, AccessDeniedException)
     # To log all exceptions leave this array empty.
