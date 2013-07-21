@@ -1,7 +1,7 @@
 # EoAirbrakeBundle
 
 [![Latest Stable Version](https://poser.pugx.org/eo/airbrake-bundle/v/stable.png)](https://packagist.org/packages/eo/airbrake-bundle)
-[![Dependencies Status](https://www.versioneye.com/php/eo:airbrake-bundle/dev-master/badge.png)](http://depending.in/eymengunay/EoAirbrakeBundle)
+[![Dependencies Status](https://www.versioneye.com/php/eo:airbrake-bundle/dev-master/badge.png)](https://www.versioneye.com/php/eo:airbrake-bundle)
 
 [Airbrake.io](https://airbrake.io) integration for Symfony2.
 
