@@ -10,4 +10,12 @@
         <parameter key="eo_airbrake.exception_listener.class">Eo\AirbrakeBundle\EventListener\ExceptionListener</parameter>
         <parameter key="eo_airbrake.shutdown_listener.class">Eo\AirbrakeBundle\EventListener\ShutdownListener</parameter>
     </parameters>
+
+	<services>
+    	<!-- Airbrake Notifier Extension -->
+        <service id="eo_airbrake.twig.notifier_extension" class="Eo\AirbrakeBundle\Twig\Extension\NotifierExtension">
+            <tag name="twig.extension" />
+            <argument type="service" id="service_container"/>
+        </service>
+	</services>
 </container>

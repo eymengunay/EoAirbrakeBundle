@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  (function(callback) {
+    var ab = document.createElement('script');
+    ab.type = 'text/javascript'; ab.async = true;
+    ab.onload = ab.onreadystatechange = callback;
+    // this should match your copy of the compiled notifier.js or notifier.min.js
+    ab.src = (("https:" == document.location.protocol) ? "https://ssljscdn" : "http://jscdn") + ".airbrake.io/notifier.min.js";
+    var p = document.getElementsByTagName('script')[0];
+    p.parentNode.insertBefore(ab, p);
+    }(function () {
+    Airbrake.setRequestType('POST');
+    Airbrake.setGuessFunctionName(true);
+    // set hostname
+    Airbrake.setHost('{{ host }}');
+    // insert your api key
+    Airbrake.setKey('{{ api_key }}');
+    // set the environment
+    Airbrake.setEnvironment('{{ app.environment }}');
+    // add any defaults
+    Airbrake.setErrorDefaults({
+      // you probably want to leave this line, so the error url gets set to the page url
+      url: document.URL,
+      // controller
+      controller: "{{ app.request.get('_controller') }}",
+      // route
+      route: "{{ app.request.get('_route') }}",
+      // current user
+      {% if app.user.username %}user: "{{ app.user.username }}"{% endif %}
+    });
+  }));
+</script>
