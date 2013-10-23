@@ -98,6 +98,19 @@ eo_airbrake:
 ## Usage
 Once configured, bundle will automatically send exceptions/errors to airbrake server.
 
+## Logging javascript errors
+EoAirbrakeBundle includes a twig extension for airbrake javascript notifier. To start logging exceptions on client side you have to add `{{ airbrake_notifier() }}` function in your base template:
+```
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Hello World</title>
+        <!-- Airbrake notifier -->
+        {{ airbrake_notifier() }}
+    </head>
+...
+```
+
 ## License
 This bundle is under the MIT license. See the complete license in the bundle:
 ```
