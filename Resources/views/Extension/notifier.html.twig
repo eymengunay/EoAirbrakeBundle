@@ -25,7 +25,7 @@
       // route
       route: "{{ app.request.get('_route') }}",
       // current user
-      {% if app.user.username %}user: "{{ app.user.username }}"{% endif %}
+      {% if app.user %}user: "{{ app.user.username }}"{% endif %}
     });
   }));
 </script>
