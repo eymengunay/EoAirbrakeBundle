@@ -3,9 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/eo/airbrake-bundle/v/stable.png)](https://packagist.org/packages/eo/airbrake-bundle)
 [![Dependencies Status](https://www.versioneye.com/php/eo:airbrake-bundle/dev-master/badge.png)](https://www.versioneye.com/php/eo:airbrake-bundle)
 
-[Airbrake.io](https://airbrake.io) integration for Symfony2.
-
-(Supports also [Errbit](https://github.com/errbit/errbit))
+[Airbrake.io](https://airbrake.io) & [Errbit](https://github.com/errbit/errbit) integration for Symfony2.
 
 ## Prerequisites
 This version of the bundle requires Symfony 2.1+
