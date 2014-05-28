@@ -20,12 +20,12 @@ class Configuration extends BaseConfiguration
      * 
      * @param Configuration $configuration
      */
-    public function __construct($container)
+    public function __construct($apiKey, $async, $env, $host)
     {
-        parent::__construct($container->getParameter('eo_airbrake.api_key'), array(
-            'async'           => $container->getParameter('eo_airbrake.async'),
-            'environmentName' => $container->get('kernel')->getEnvironment(),
-            'host'            => $container->getParameter('eo_airbrake.host')
+        parent::__construct($apiKey, array(
+            'async'           => $async,
+            'environmentName' => $env,
+            'host'            => $host
         ));
     }
 }

@@ -44,7 +44,7 @@ class EoAirbrakeExtension extends Extension
         if ($config['api_key']) {
             // Airbreak Configuration
             $class = $container->getParameter('eo_airbrake.configuration.class');
-            $definition = new Definition($class, array(new Reference('service_container')));
+            $definition = new Definition($class, array($config['api_key'], $conig['async'], $container->getParameter('kernel.environment'), $config['host']));
             $container->setDefinition('eo_airbrake.configuration', $definition);
 
             // Airbreak Client
