@@ -17,15 +17,17 @@ class Configuration extends BaseConfiguration
 {
     /**
      * Class constructor
-     * 
+     *
      * @param Configuration $configuration
      */
-    public function __construct($apiKey, $async, $env, $host)
+    public function __construct($apiKey, $async, $env, $host, $secure)
     {
         parent::__construct($apiKey, array(
             'async'           => $async,
             'environmentName' => $env,
-            'host'            => $host
+            'host'            => $host,
+            'secure'          => $secure,
+            'port'            => $secure ? 443 : 80
         ));
     }
 }

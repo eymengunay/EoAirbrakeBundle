@@ -34,6 +34,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('api_key')->defaultFalse()->end()
                 ->booleanNode('async')->defaultTrue()->end()
                 ->scalarNode('host')->defaultValue('api.airbrake.io')->end()
+                ->scalarNode('secure')->defaultTrue()->end()
                 ->variableNode('ignored_exceptions')->defaultValue(array('Symfony\Component\HttpKernel\Exception\HttpException'))->end()
             ->end()
         ;

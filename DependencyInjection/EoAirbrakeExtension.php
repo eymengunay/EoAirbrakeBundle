@@ -39,12 +39,13 @@ class EoAirbrakeExtension extends Extension
         $container->setParameter('eo_airbrake.api_key', $config['api_key']);
         $container->setParameter('eo_airbrake.async', $config['async']);
         $container->setParameter('eo_airbrake.host', $config['host']);
+        $container->setParameter('eo_airbrake.secure', $config['secure']);
 
         // Exception Listener
         if ($config['api_key']) {
             // Airbreak Configuration
             $class = $container->getParameter('eo_airbrake.configuration.class');
-            $definition = new Definition($class, array($config['api_key'], $config['async'], $container->getParameter('kernel.environment'), $config['host']));
+            $definition = new Definition($class, array($config['api_key'], $config['async'], $container->getParameter('kernel.environment'), $config['host'], $config['secure']));
             $container->setDefinition('eo_airbrake.configuration', $definition);
 
             // Airbreak Client
