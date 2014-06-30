@@ -91,6 +91,9 @@ eo_airbrake:
     # To log all exceptions leave this array empty.
     ignored_exceptions: ["Symfony\Component\HttpKernel\Exception\HttpException"]
 
+    # If you want to force override of whether or not to use SSL you can set secure to true/false whether or not to use SSL you can set secure to true/false
+    # By default secure is set to true
+    secure: true
 ```
 
 ## Usage
