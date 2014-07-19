@@ -11,7 +11,7 @@
 
 namespace Eo\AirbrakeBundle\Twig\Extension;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
  * NotifierExtension
@@ -19,23 +19,22 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class NotifierExtension extends \Twig_Extension
 {
     /**
-     * @var array $options Array of default options that can be overriden with getters and in the construct.
+     * @var EngineInterface
      */
-    protected $options = array();
-
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected $templating;
 
     /**
      * Class constructor
      *
-     * @param ContainerInterface $container
+     * @param EngineInterface $templating
+     * @param string          $host
+     * @param string          $apiKey
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(EngineInterface $templating, $host, $apiKey)
     {
-        $this->container = $container;
+        $this->templating = $templating;
+        $this->host       = $host;
+        $this->apiKey     = $apiKey;
     }
 
     /**
@@ -55,9 +54,9 @@ class NotifierExtension extends \Twig_Extension
      */
     public function getAirbrakeNotifier()
     {
-        return $this->container->get('templating')->render('EoAirbrakeBundle:Extension:notifier.html.twig', array(
-            'host' => $this->container->getParameter('eo_airbrake.host'),
-            'api_key' => $this->container->getParameter('eo_airbrake.api_key')
+        return $this->templating->render('EoAirbrakeBundle:Extension:notifier.html.twig', array(
+            'host'    => $this->host,
+            'api_key' => $this->apiKey
         ));
     }
 

@@ -14,8 +14,10 @@
 	<services>
     	<!-- Airbrake Notifier Extension -->
         <service id="eo_airbrake.twig.notifier_extension" class="Eo\AirbrakeBundle\Twig\Extension\NotifierExtension">
+            <argument type="service" id="templating"/>
+            <argument>%eo_airbrake.host%</argument>
+            <argument>%eo_airbrake.api_key%</argument>
             <tag name="twig.extension" />
-            <argument type="service" id="service_container"/>
         </service>
 	</services>
 </container>
