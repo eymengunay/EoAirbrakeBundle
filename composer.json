@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "symfony/symfony": ">=2.1,<2.7-dev",
+        "symfony/symfony": ">=2.1,<2.8-dev",
         "dbtlr/php-airbrake": "dev-master"
     },
     "target-dir": "Eo/AirbrakeBundle",
