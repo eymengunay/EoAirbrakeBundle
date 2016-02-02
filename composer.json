@@ -14,10 +14,9 @@
         "symfony/symfony": ">=2.1,<2.8-dev",
         "dbtlr/php-airbrake": "~1.1"
     },
-    "target-dir": "Eo/AirbrakeBundle",
     "autoload": {
-        "psr-0": {
-            "Eo\\AirbrakeBundle": ""
+        "psr-4": {
+            "Eo\\AirbrakeBundle\\": ""
         }
     },
     "extra": {
