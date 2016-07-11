@@ -32,7 +32,7 @@ class ShutdownListener
     {
         $this->client = $client;
     }
-    
+
     /**
      * Register a function for execution on shutdown
      *
