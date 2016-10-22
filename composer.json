@@ -1,7 +1,7 @@
 {
     "name": "eo/airbrake-bundle",
     "type": "symfony-bundle",
-    "description": "Airbrake.io integration for Symfony2",
+    "description": "Airbrake.io integration for Symfony",
     "keywords": ["airbrake", "exception", "errbit"],
     "license": "MIT",
     "authors": [
