@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "symfony/symfony": "^3.0",
+        "symfony/symfony": "^2.7 || ^3.0",
         "dbtlr/php-airbrake": "~1.1"
     },
     "autoload": {
