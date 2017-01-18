@@ -38,13 +38,13 @@ class NotifierExtension extends \Twig_Extension
         $this->container = $container;
     }
 
-    /**
+/**
      * {@inheritDoc}
      */
     public function getFunctions()
     {
         return array(
-            'airbrake_notifier' => new \Twig_Function_Method($this, 'getAirbrakeNotifier', array(
+            new \Twig_SimpleFunction('airbrake_notifier', [$this, 'getAirbrakeNotifier'], array(
                 'is_safe' => array('html'),
             ))
         );
